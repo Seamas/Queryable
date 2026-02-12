@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Seamas.EFQuery.Test;
+namespace Wang.Seamas.Queryable.Test;
 
 public class MovieDbContext : DbContext
 {

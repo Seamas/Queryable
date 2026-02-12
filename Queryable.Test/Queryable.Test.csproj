@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
+        <RootNamespace>Wang.Seamas.Queryable.Test</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -23,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EFQuery\EFQuery.csproj" />
+      <ProjectReference Include="..\Queryable\Queryable.csproj" />
     </ItemGroup>
 
 </Project>

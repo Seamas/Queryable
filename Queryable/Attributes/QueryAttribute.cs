@@ -1,6 +1,6 @@
 using System;
 
-namespace Seamas.EFQuery.Attributes;
+namespace Wang.Seamas.Queryable.Attributes;
 
 
 [AttributeUsage(AttributeTargets.Property)]

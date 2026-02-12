@@ -1,10 +1,13 @@
+using System;
 using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
 using System.Reflection;
-using Seamas.EFQuery.Attributes;
+using Wang.Seamas.Queryable.Attributes;
 
-namespace Seamas.EFQuery;
+namespace Wang.Seamas.Queryable.Helpers;
 
-public static class QueryAttributeHelper
+public static class QueryHelper
 {
     public static (string, object?[] param) Visit(object obj)
     {
@@ -33,5 +36,19 @@ public static class QueryAttributeHelper
         }
 
         return (sql, param);
+    }
+    
+    
+    /// <summary>
+    /// 转换成
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="config"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static Expression<Func<T, bool>>? Visit<T>(object obj, ParsingConfig? config = null)
+    {
+        var (cond, param) = Visit(obj);
+        return DynamicExpressionParser.ParseLambda<T, bool>(config ?? ParsingConfig.Default, true, cond, param);
     }
 }

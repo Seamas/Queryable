@@ -1,10 +1,10 @@
-namespace Seamas.EFQuery.Attributes;
+namespace Wang.Seamas.Queryable.Attributes;
 
-public class GreaterThanAttribute(string name = "") : QueryAttribute(name, SqlOperator.GreaterThan)
+public class LikeAttribute(string name = "") : QueryAttribute(name, SqlOperator.Like)
 {
     public override string ToExpression(int i, string propertyName)
     {
-        return $"{GetPropertyName(propertyName)} > @{i}";
+        return $"{GetPropertyName(propertyName)}.Contains(@{i})";
     }
 
     public override bool IsValid(object? value)
@@ -13,7 +13,7 @@ public class GreaterThanAttribute(string name = "") : QueryAttribute(name, SqlOp
         {
             null => false,
             string strValue => !string.IsNullOrWhiteSpace(strValue),
-            _ => true
+            _ => false
         };
     }
 }

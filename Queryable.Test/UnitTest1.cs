@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Dynamic.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Linq.Dynamic.Core;
+using Wang.Seamas.Queryable.Helpers;
 
-namespace Seamas.EFQuery.Test;
+namespace Wang.Seamas.Queryable.Test;
 
 
 public class Tests
@@ -32,10 +33,14 @@ public class Tests
             Alias = "比较像",
             TestLike = new []{ 50, 60 }
         };
+        
+        
 
-        var (cond, param) = QueryAttributeHelper.Visit(searchOption);
+        // var expression = QueryHelper.Visit<Movie>(searchOption);
+
+        var (cond, param) = QueryHelper.Visit(searchOption);
         var movies = context.Set<Movie>()
-            .Where(cond, param)
+            .Where(cond, param)   // .Where(expression)
             .Where(item => item.Likes > 10)
             .ToList();
         

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFQuery", "EFQuery\EFQuery.csproj", "{5C79FDC7-39D3-4002-B561-2BBD074E9DA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queryable", "Queryable\Queryable.csproj", "{5C79FDC7-39D3-4002-B561-2BBD074E9DA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFQuery.Test", "EFQuery.Test\EFQuery.Test.csproj", "{07B2B7FB-56FE-4C33-B560-677E27ED18DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queryable.Test", "Queryable.Test\Queryable.Test.csproj", "{07B2B7FB-56FE-4C33-B560-677E27ED18DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

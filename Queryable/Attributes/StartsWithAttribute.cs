@@ -1,10 +1,10 @@
-namespace Seamas.EFQuery.Attributes;
+namespace Wang.Seamas.Queryable.Attributes;
 
-public class EndsWithAttribute(string name = "") : QueryAttribute(name, SqlOperator.EndsWith)
+public class StartsWithAttribute(string name = "") : QueryAttribute(name, SqlOperator.StartsWith)
 {
     public override string ToExpression(int i, string propertyName)
     {
-        return $"{GetPropertyName(propertyName)}.EndsWith(@{i})";
+        return $"{GetPropertyName(propertyName)}.StartsWith(@{i})";
     }
 
     public override bool IsValid(object? value)

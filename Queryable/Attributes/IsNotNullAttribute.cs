@@ -1,12 +1,10 @@
-using System;
+namespace Wang.Seamas.Queryable.Attributes;
 
-namespace Seamas.EFQuery.Attributes;
-
-public class EqualAttribute(string name = "") : QueryAttribute(name, SqlOperator.Equal)
+public class IsNotNullAttribute(string name = "") : QueryAttribute(name, SqlOperator.IsNotNull)
 {
     public override string ToExpression(int i, string propertyName)
     {
-        return $"{GetPropertyName(propertyName)} == @{i}";
+        return $"{GetPropertyName(propertyName)} != null";    
     }
 
     public override bool IsValid(object? value)
@@ -15,9 +13,6 @@ public class EqualAttribute(string name = "") : QueryAttribute(name, SqlOperator
         {
             null => false,
             string str => !string.IsNullOrWhiteSpace(str),
-            int i => i != 0,
-            bool b => b,
-            DateTime dt => dt != default,
             _ => true
         };
     }

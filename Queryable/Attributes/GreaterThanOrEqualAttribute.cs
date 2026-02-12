@@ -1,10 +1,10 @@
-namespace Seamas.EFQuery.Attributes;
+namespace Wang.Seamas.Queryable.Attributes;
 
-public class LessThanOrEqualAttribute(string name = "") : QueryAttribute(name, SqlOperator.LessThanOrEqual)
+public class GreaterThanOrEqualAttribute(string name = "") : QueryAttribute(name, SqlOperator.GreaterThanOrEqual)
 {
     public override string ToExpression(int i, string propertyName)
     {
-        return $"{GetPropertyName(propertyName)} <= @{i}";
+        return $"{GetPropertyName(propertyName)} >= @{i}";
     }
 
     public override bool IsValid(object? value)

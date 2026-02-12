@@ -1,4 +1,4 @@
-namespace Seamas.EFQuery.Test;
+namespace Wang.Seamas.Queryable.Test;
 
 public class Movie
 {

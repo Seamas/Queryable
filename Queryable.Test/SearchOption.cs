@@ -1,6 +1,6 @@
-using Seamas.EFQuery.Attributes;
+using Wang.Seamas.Queryable.Attributes;
 
-namespace Seamas.EFQuery.Test;
+namespace Wang.Seamas.Queryable.Test;
 
 public class SearchOption
 {

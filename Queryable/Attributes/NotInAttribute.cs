@@ -1,12 +1,12 @@
 using System.Collections;
 
-namespace Seamas.EFQuery.Attributes;
+namespace Wang.Seamas.Queryable.Attributes;
 
-public class InAttribute(string name = "") : QueryAttribute(name, SqlOperator.In)
+public class NotInAttribute(string name = "") : QueryAttribute(name, SqlOperator.NotIn)
 {
     public override string ToExpression(int i, string propertyName)
     {
-        return $"{GetPropertyName(propertyName)} in @{i}";    
+        return $"{GetPropertyName(propertyName)} not in @{i}";
     }
 
     public override bool IsValid(object? value)
