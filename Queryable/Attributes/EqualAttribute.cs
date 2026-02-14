@@ -15,8 +15,6 @@ public class EqualAttribute(string name = "") : QueryAttribute(name, SqlOperator
         {
             null => false,
             string str => !string.IsNullOrWhiteSpace(str),
-            int i => i != 0,
-            bool b => b,
             DateTime dt => dt != default,
             _ => true
         };
